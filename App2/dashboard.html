@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criminal Network Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                CN
+            </div>
+
+            <div class="brand-name">
+                <strong>Criminal</strong>
+                <strong>Networking</strong>
+            </div>
+
+        </div>
+
+        <div class="prototype-label">
+            DEMO PROTOTYPE
+        </div>
+
+        <div class="sidebar-menu active">
+            🏠 <span>Dashboard</span>
+        </div>
+
+        <div class="sidebar-menu">
+            👤 <span>Criminal Profiles</span>
+        </div>
+
+        <div class="sidebar-menu">
+            🕸️ <span>Network Analysis</span>
+        </div>
+
+        <div class="sidebar-menu">
+            📁 <span>Case Records</span>
+        </div>
+
+        <div class="sidebar-menu">
+            📊 <span>Reports</span>
+        </div>
+
+        <div class="sidebar-menu">
+            🔔 <span>Alerts</span>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <h1>Criminal Network Dashboard</h1>
+
+                <p>
+                    AI-powered analysis of criminal relationships
+                </p>
+
+            </div>
+
+            <div class="admin-box">
+                👤 Admin
+            </div>
+
+        </header>
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <section class="statistics">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👤
+                </div>
+
+                <h3>Total Criminals</h3>
+
+                <h2>1,248</h2>
+
+                <p>Registered profiles</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🕸️
+                </div>
+
+                <h3>Active Networks</h3>
+
+                <h2>86</h2>
+
+                <p>Detected networks</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⚠️
+                </div>
+
+                <h3>High Risk</h3>
+
+                <h2>32</h2>
+
+                <p>High-risk profiles</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📁
+                </div>
+
+                <h3>Cases Analyzed</h3>
+
+                <h2>3,642</h2>
+
+                <p>Analyzed cases</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SEARCH + AI ================= -->
+
+        <section class="action-bar">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search criminal or network..."
+                oninput="searchNetwork()"
+            >
+
+            <button onclick="runAIAnalysis()">
+                🤖 Run AI Analysis
+            </button>
+
+        </section>
+
+
+        <!-- ================= GRAPH + DETAILS ================= -->
+
+        <section class="analysis-layout">
+
+
+            <!-- NETWORK GRAPH -->
+
+            <div class="network-card">
+
+                <div class="network-header">
+
+                    <div>
+
+                        <h2>🕸️ Criminal Network Analysis</h2>
+
+                        <p>
+                            Click any node to view relationship details
+                        </p>
+
+                    </div>
+
+                    <div class="legend">
+
+                        <span>
+                            <i class="legend-dot high"></i>
+                            High Risk
+                        </span>
+
+                        <span>
+                            <i class="legend-dot medium"></i>
+                            Associate
+                        </span>
+
+                        <span>
+                            <i class="legend-dot gang"></i>
+                            Gang
+                        </span>
+
+                        <span>
+                            <i class="legend-dot location"></i>
+                            Location
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GRAPH AREA -->
+
+                <div class="network-graph">
+
+
+                    <!-- CONNECTIONS -->
+
+                    <div class="connection connection-ab"></div>
+
+                    <div class="connection connection-ac"></div>
+
+                    <div class="connection connection-ad"></div>
+
+                    <div class="connection connection-ce"></div>
+
+                    <div class="connection connection-be"></div>
+
+                    <div class="connection connection-ag"></div>
+
+                    <div class="connection connection-eg"></div>
+
+                    <div class="connection connection-cl"></div>
+
+
+                    <!-- CENTRAL NODE -->
+
+                    <button
+                        class="network-node criminal-high central-node"
+                        data-name="Criminal A"
+                        onclick="showCriminal('A')"
+                    >
+                        👤
+                        <span>Criminal A</span>
+                    </button>
+
+
+                    <!-- OTHER CRIMINALS -->
+
+                    <button
+                        class="network-node criminal-medium node-b"
+                        data-name="Criminal B"
+                        onclick="showCriminal('B')"
+                    >
+                        👤
+                        <span>Criminal B</span>
+                    </button>
+
+
+                    <button
+                        class="network-node criminal-high node-c"
+                        data-name="Criminal C"
+                        onclick="showCriminal('C')"
+                    >
+                        👤
+                        <span>Criminal C</span>
+                    </button>
+
+
+                    <button
+                        class="network-node criminal-low node-d"
+                        data-name="Criminal D"
+                        onclick="showCriminal('D')"
+                    >
+                        👤
+                        <span>Criminal D</span>
+                    </button>
+
+
+                    <button
+                        class="network-node criminal-medium node-e"
+                        data-name="Criminal E"
+                        onclick="showCriminal('E')"
+                    >
+                        👤
+                        <span>Criminal E</span>
+                    </button>
+
+
+                    <!-- GANG -->
+
+                    <button
+                        class="network-node gang-node node-g"
+                        data-name="Gang X"
+                        onclick="showGang()"
+                    >
+                        👥
+                        <span>Gang X</span>
+                    </button>
+
+
+                    <!-- LOCATION -->
+
+                    <button
+                        class="network-node location-node node-l"
+                        data-name="Location"
+                        onclick="showLocation()"
+                    >
+                        📍
+                        <span>Location</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DETAILS -->
+
+            <div class="details-card" id="detailsPanel">
+
+                <h2>👤 Entity Details</h2>
+
+                <div class="details-placeholder">
+
+                    <div class="big-icon">
+                        🕸️
+                    </div>
+
+                    <h3>Select a network node</h3>
+
+                    <p>
+                        Click a criminal, gang or location
+                        on the graph to see its details.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BOTTOM SECTION ================= -->
+
+        <section class="bottom-layout">
+
+
+            <!-- RECENT CASES -->
+
+            <div class="cases-card">
+
+                <h2>📁 Recent Cases</h2>
+
+                <div class="case-row">
+
+                    <div>
+                        <strong>Case #1024</strong>
+                        <p>Network investigation</p>
+                    </div>
+
+                    <span class="status high-status">
+                        High Risk
+                    </span>
+
+                </div>
+
+
+                <div class="case-row">
+
+                    <div>
+                        <strong>Case #1023</strong>
+                        <p>Illegal association</p>
+                    </div>
+
+                    <span class="status investigation-status">
+                        Investigation
+                    </span>
+
+                </div>
+
+
+                <div class="case-row">
+
+                    <div>
+                        <strong>Case #1022</strong>
+                        <p>Financial connection</p>
+                    </div>
+
+                    <span class="status analyzed-status">
+                        Analyzed
+                    </span>
+
+                </div>
+
+
+                <div class="case-row">
+
+                    <div>
+                        <strong>Case #1021</strong>
+                        <p>Cross-network activity</p>
+                    </div>
+
+                    <span class="status investigation-status">
+                        Investigation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI PANEL -->
+
+            <div class="ai-card" id="aiPanel">
+
+                <h2>🤖 AI Network Intelligence</h2>
+
+                <p>
+                    Click <strong>Run AI Analysis</strong>
+                    to analyze the demonstration network.
+                </p>
+
+                <div class="ai-features">
+
+                    <div>
+                        🔍 Relationship Detection
+                    </div>
+
+                    <div>
+                        ⚠️ Risk Identification
+                    </div>
+
+                    <div>
+                        🧠 Network Pattern Analysis
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            ⚠️ This dashboard uses simulated data for demonstration purposes.
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

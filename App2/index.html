@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Networking - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-wrapper">
+
+        <div class="login-logo">
+            CN
+        </div>
+
+        <h1>Criminal Networking</h1>
+
+        <p class="login-subtitle">
+            AI-Powered Criminal Network Analysis System
+        </p>
+
+        <div class="login-card">
+
+            <h2>Secure Login</h2>
+
+            <p class="login-description">
+                Login to access the criminal network intelligence dashboard.
+            </p>
+
+            <label for="username">Username</label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+            >
+
+            <label for="password">Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+            >
+
+            <button class="login-button" onclick="login()">
+                Login
+            </button>
+
+            <p id="login-error"></p>
+
+            <div class="demo-text">
+                Demo prototype: Any username and password can be used.
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
